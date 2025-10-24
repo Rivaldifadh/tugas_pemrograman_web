@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard SITTA</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+      <a href="#" class="navbar-logo">SITTA <span>Application</span></a>
+
+      <div class="navbar-nav" id="navbar-nav">
+        <a href="stok.html">Informasi Bahan Ajar</a>
+
+        <div class="tracking-pengiriman">
+          <a href="#" id="tracking-btn">Tracking Pengiriman</a>
+        </div>
+
+        <div class="laporan-menu">
+          <a
+            href="#"
+            id="laporan-btn"
+            onclick="toggleDropdown(event, 'dropdown-laporan')"
+            >Laporan</a
+          >
+          <div class="dropdown-laporan" id="dropdown-laporan">
+            <a href="#">Monitoring Progress DO</a>
+            <a href="#">Rekap Bahan Ajar</a>
+          </div>
+        </div>
+
+        <a href="#histori">Histori Bahan Ajar</a>
+      </div>
+
+      <div class="navbar-extra">
+        <p id="welcomeUser" class="welcome-text"></p>
+        <a href="#" id="menu"><i data-feather="menu"></i></a>
+      </div>
+
+      <footer>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </footer>
+    </nav>
+
+    <!-- SECTION TRACKING (disembunyikan dulu) -->
+    <section id="tracking-section" class="tracking-section hidden">
+      <h2>Tracking Pengiriman Bahan Ajar</h2>
+
+      <div class="tracking-form">
+        <input
+          type="text"
+          id="inputDO"
+          placeholder="Masukkan Nomor Delivery Order"
+        />
+        <button type="button" id="btnCari">Cari</button>
+      </div>
+
+      <div id="tracking-result" class="tracking-result hidden">
+        <h3>Hasil Pencarian</h3>
+        <p><strong>Nama Mahasiswa:</strong> <span id="namaMahasiswa"></span></p>
+        <p><strong>Status Pengiriman:</strong></p>
+        <div class="progress-bar">
+          <div id="progress-fill"></div>
+        </div>
+        <ul class="detail-ekspedisi">
+          <li><strong>Ekspedisi:</strong> <span id="ekspedisi"></span></li>
+          <li>
+            <strong>Tanggal Kirim:</strong> <span id="tanggalKirim"></span>
+          </li>
+          <li><strong>Jenis Paket:</strong> <span id="jenisPaket"></span></li>
+          <li>
+            <strong>Total Pembayaran:</strong>
+            <span id="totalPembayaran"></span>
+          </li>
+        </ul>
+
+        <!-- LIST PERJALANAN DO DITAMBAHKAN DI SINI -->
+        <h4>Detail Perjalanan:</h4>
+        <ul id="perjalananList"></ul>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+    <script src="dashboard.js"></script>
+
+    <img src="logo.png" class="img" id="logo_ut"/>
+  </body>
+</html>

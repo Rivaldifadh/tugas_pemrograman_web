@@ -1,0 +1,392 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f1f5f9;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+  --shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  color: black;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === NAVBAR DENGAN LOGO === */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #6ab1f8;
+  color: white;
+  position: fixed;
+  width: 100%;
+  height: 10%;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar-logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar-logo span {
+  color: yellow;
+}
+
+.img {
+  display: flex;
+  position: relative;
+  opacity: 0.3;
+}
+/* === USER INFO DI NAVBAR === */
+.welcome-text {
+  color: white;
+  margin-right: 15px;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.logout-btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  display: flexbox;
+  position: static;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: var(--primary);
+  transform: scale(1.05);
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+.navbar-nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+.navbar-nav a:hover {
+  color: #ffd700;
+}
+
+/*  animasi underline */
+.navbar-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
+}
+
+.navbar-nav a:hover::after {
+  width: 100%;
+}
+
+/* tracking section */
+.tracking-section {
+  max-width: 600px;
+  margin: 100px auto;
+  background: #f8faff;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tracking-section.hidden {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  display: none;
+}
+
+.tracking-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.tracking-form input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.tracking-form button {
+  background: #004080;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: sticky;
+  display: flex;
+}
+
+.tracking-form button:hover {
+  background: #0059d6;
+}
+
+/* Progress bar */
+.progress-bar {
+  width: 100%;
+  height: 12px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0;
+  background: #4caf50;
+  transition: width 0.5s ease;
+}
+
+.tracking-result {
+  margin-top: 20px;
+  text-align: left;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+  display: none;
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+/* progress bar */
+.progress-bar {
+  width: 100%;
+  height: 15px;
+  background-color: #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+#progress-fill {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  transition: width 0.5s ease;
+}
+
+.detail-ekspedisi li {
+  list-style: none;
+  margin: 5px 0;
+}
+
+.dropdown-laporan {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  background-color: var(--bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  margin-top: 5px;
+  padding: 10px;
+  z-index: 10;
+}
+.dropdown-laporan .dropdown-show {
+  display: relative;
+}
+.dropdown-laporan a {
+  display: inline-block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.4s;
+}
+
+.dropdown-laporan a:hover {
+  background-color: var(--bg);
+}
+
+.progress-menunggu {
+  width: 40%;
+  background-color: gray;
+}
+
+.content {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.content .subtitle {
+  font-size: 26px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.content .logo-ut {
+  border-radius: 10%;
+}
+
+.tracking-section {
+  margin-top: 40px;
+}
+
+.tracking-section input {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.tracking-section button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background: #003366;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.hasil-box {
+  margin-top: 25px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  display: inline-block;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  margin: 10px 0;
+  background-color: #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-proses {
+  background: linear-gradient(90deg, #f1c40f 70%, transparent 30%);
+}
+
+.progress-selesai {
+  background: linear-gradient(90deg, #2ecc71 100%, transparent 0%);
+}
+
+.progress-menunggu {
+  background: linear-gradient(90deg, #95a5a6 40%, transparent 60%);
+}
+
+/* tombol logout */
+button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background: var(--primary);
+  color: var(--bg);
+  border: none;
+  border-radius: 50px;
+  padding: 12px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: backgrouns 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.content .logo-ut {
+  opacity: 0.5;
+}
+
+/* media responsif mobile phone */
+@media (max-width: 780px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 15px 20px;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    background: var(--primary);
+    display: none;
+    margin-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .navbar-nav.show {
+    display: flex;
+  }
+
+  .navbar-nav a {
+    padding: 10px 0;
+  }
+
+  .navbar-extra {
+    display: block;
+  }
+
+  .menu {
+    font-size: 24px;
+    position: relative;
+    color: var(--bg);
+    cursor: pointer;
+  }
+
+  .navbar-logo-area {
+    gap: 6px;
+  }
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+}
