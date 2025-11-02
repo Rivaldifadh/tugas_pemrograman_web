@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Halaman login SITTA Universitas Terbuka">
     <title>Login</title>
 
     <!-- FONT -->
@@ -25,8 +26,9 @@
         Universitas Terbuka
       </h2>
 
-      <form>
-        <input type="text" id="email" placeholder="Masukkan Email" required />
+      <form novalidate>
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="Masukkan Email" required />
         <input
           type="password"
           id="password"
@@ -52,3 +54,4 @@
     <!-- <script src="data.js"></script> -->
   </body>
 </html>
+
