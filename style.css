@@ -37,43 +37,50 @@ body {
 }
 
 .login-container input {
-  width: auto;
+  width: 100%;
   padding: 12px;
   margin: 10px;
   border: 1px solid #7bdaff;
   border-radius: 8px;
   font-size: 14px;
-  transition: border 0.3 ease;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login-container input:focus {
   outline: none;
   border-color: white;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
 }
 
+/* tombol umum */
 .login-container button {
   width: auto;
   padding: 12px;
   margin-top: 10px;
   border: none;
   border-radius: 8px;
-  background-color: #3b82f6;
-  color: white;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.login-container button:hover {
+/* tombol utama: MASUK */
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
   background-color: #2563eb;
 }
 
-/* lupa password */
-.login-container button[type="button"] {
+/* tombol sekunder: LUPA PASSWORD */
+.btn-secondary {
   background-color: #e5e7eb;
   color: var(--primary);
 }
-.login-container button[type="button"]:hover {
+
+.btn-secondary:hover {
   background-color: #99b5eb;
 }
 
@@ -85,7 +92,7 @@ body {
 }
 
 .login-container a {
-  color: #f4f5f7;
+  color: #003cff;
   font-weight: 500;
 }
 
@@ -93,10 +100,12 @@ body {
   text-decoration: underline;
 }
 
+/* footer */
 footer {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
 footer img {
@@ -114,4 +123,4 @@ footer img {
   .login-container h2 {
     font-size: 20px;
   }
-}
+      }
